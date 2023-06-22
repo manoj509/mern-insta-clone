@@ -53,7 +53,7 @@ exports.getPost = async (req, res) => {
     try {
 
         const result = await Post.find({ userId: req.body.userId })
-        res.json({
+        res.json({  
             message: "post Data fetch successfulyy",
             result
         })
@@ -66,10 +66,11 @@ exports.getPost = async (req, res) => {
 }
 exports.deletePost = async (req, res) => {
     try {
-
-        const result = await Post.deleteMany()
+            const {postId} = req.params
+        const result = await Post.findByIdAndDelete(postId)
         res.json({
             message: "post deleted successfulyy",
+            result
         })
     } catch (error) {
         res.json({

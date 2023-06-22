@@ -5,8 +5,7 @@ const { protected } = require("../middleware/loginOnly")
 
 router
     .post('/addpost', protected, addPost)
-
     .get('/getpost', protected, getPost)
-    .delete('/deletepost', deletePost)
+    .delete('/deletepost/:postId', deletePost)
 
 module.exports = router
