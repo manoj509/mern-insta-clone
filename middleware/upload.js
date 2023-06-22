@@ -11,6 +11,6 @@ const storage = multer.diskStorage({
         cb(null, "public")
     }
 })
-exports.postUpload = multer({ storage }).array("image")\
+exports.postUpload = multer({ storage }).array("image")
 
 
